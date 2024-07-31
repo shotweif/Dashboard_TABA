@@ -3,6 +3,8 @@ import './App.css';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Inicio from './view/Inicio';
+import './chartSetup'; 
+
 
 function App() {
   return (

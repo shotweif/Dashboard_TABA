@@ -16,8 +16,8 @@ function loadScript(src: string, attributes: { [key: string]: string } = {}) {
 
 function initializeScripts() {
   loadScript('https://cdn.tailwindcss.com?plugins=forms,typography');
-  loadScript('https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js', { defer: 'true', init: '' });
-  loadScript('https://cdn.jsdelivr.net/npm/chart.js');
+  // loadScript('https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js', { defer: 'true', init: '' });
+  // loadScript('https://cdn.jsdelivr.net/npm/chart.js');
 }
 
 // Initialize scripts
