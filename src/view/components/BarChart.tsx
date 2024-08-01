@@ -18,6 +18,8 @@ const BarChart: React.FC = () => {
     };
 
     const options: ChartOptions<'bar'> = {
+        responsive: true,
+        maintainAspectRatio: false, // Esto permite que el gráfico sea ajustable en altura
         scales: {
             y: {
                 beginAtZero: true
@@ -25,7 +27,11 @@ const BarChart: React.FC = () => {
         }
     };
 
-    return <Bar data={data} options={options} />;
+    return (
+        <div className='h-2/4'>
+            <Bar data={data} options={options} />
+        </div>
+    );
 };
 
 export default BarChart;

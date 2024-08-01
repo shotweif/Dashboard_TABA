@@ -4,6 +4,7 @@ import BarChart from './components/BarChart';
 import PieChart from './components/PieChart';
 import DoughnutChart from './components/DoughnutChart';
 import LineChart from './components/LineChart';
+import './styles.css';
 
 const formatDate = (date: Date): string => {
     const year = date.getFullYear();
@@ -69,13 +70,24 @@ const Inicio: React.FC = () => {
 
               <div className="basis-1/4 p-4">
                   <div className="bg-card h-full p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 border-l-4 border-secondary bg-white border-green-400">
+                        <h3 className="text-lg font-semibold text-secondary text-green-600">Total de Transacciones</h3>
+                        <p className="text-4xl font-bold text-primary-foreground">1,768</p>
+                        <h3 className="text-lg font-semibold text-secondary text-green-600 pt-10">Total Historio</h3>
+                        <p className="text-4xl font-bold text-primary-foreground">1000,768</p>
+
+                  </div>
+              </div>
+
+              <div className="basis-1/4 p-4">
+                    <div className="bg-card h-full w- p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-1 border-l-4 border-secondary bg-white border-green-400">
                       <h3 className="text-lg font-semibold text-secondary text-green-600">Usuarios Activos</h3>
                       <p className="text-4xl font-bold text-primary-foreground">3,456</p>
                       <p className="text-sm text-muted-foreground">Usuarios que han realizado al menos una transacción</p>
                   </div>
               </div>
+              
               <div className="basis-1/2 p-4">
-                  <div className="p-4 w-6/12 h-full rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-1 bg-white">
+                  <div className="p-4 w-full h-full rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-1 bg-white">
                       <LineChart />
                   </div>
               </div>

@@ -26,7 +26,14 @@ const DoughnutChart: React.FC = () => {
         }
     };
 
-    return <Doughnut data={data} options={options} />;
+//    return <Doughnut data={data} options={options} />;
+    return (
+        <div>
+             <h3 className="text-lg font-semibold text-accent text-green-600">Tasa de Deserción</h3>
+             <p className="text-4xl font-bold text-primary-foreground">12.5%</p>
+             <Doughnut data={data} options={options} />
+        </div>
+    );
 };
 
 export default DoughnutChart;

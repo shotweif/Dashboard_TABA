@@ -23,7 +23,10 @@ const PieChart: React.FC = () => {
         }
     };
 
-    return <Pie data={data} options={options} />;
+    return <div>
+        <h3 className="text-lg font-semibold text-primary text-green-600">Origen de Transacciones</h3>
+        <Pie data={data} options={options} />
+    </div>;
 };
 
 export default PieChart;
