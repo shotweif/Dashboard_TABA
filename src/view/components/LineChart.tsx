@@ -1,21 +1,40 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { ChartData, ChartOptions } from 'chart.js';
+import fakeData from '../../data/fakeData.json';
+import { DataStructure } from '../../types/information';
+import { getHours, parseISO } from "date-fns";
+import useFetchTransactions from '../../hooks/fetchTransantionDataHook';
+import LoadingSpinner from './LoadingSpinner';
 
 const LineChart: React.FC = () => {
+
+
+    //const info: DataStructure = fakeData;
+    const { info, loading, error } = useFetchTransactions('https://172.24.11.42/ServiciosBackPR/api/Reportes/RequestValuesReporteCanales');
+    if (loading) return <LoadingSpinner />;
+    if (error) return <div>Error: {error}</div>;
+  const transactionsByHour: { [key: number]: number } = {};
+
+  info!.ResultadosReportecanalesWipDiario.forEach((transaction) => {
+    const hour = getHours(parseISO(transaction.FechaTrx));
+    if (!transactionsByHour[hour]) {
+      transactionsByHour[hour] = 0;
+    }
+    transactionsByHour[hour]++;
+  });
+
+  // Preparar los datos para el gráfico
+  const hours = Object.keys(transactionsByHour).map((hour) => parseInt(hour));
+
+  const counts = Object.values(transactionsByHour);
+ 
+
     const data: ChartData<'line'> = {
-        labels: [
-            '00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00',
-            '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00',
-            '20:00', '21:00', '22:00', '23:00'
-        ],
+        labels: hours.map(hour => `${hour}:00`),
         datasets: [{
             label: 'Usuarios Activos',
-            data: [
-                120, 115, 130, 110, 100, 105, 120, 140, 150, 160,
-                170, 180, 200, 220, 240, 230, 210, 190, 180, 170,
-                160, 150, 140, 130
-            ],
+            data: counts,
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderColor: 'rgba(63, 191, 63, 1)',
             borderWidth: 1,

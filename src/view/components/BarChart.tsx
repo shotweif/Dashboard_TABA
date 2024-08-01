@@ -1,16 +1,36 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import { ChartData, ChartOptions } from 'chart.js';
-
+import fakeData from '../../data/fakeData.json';
+import { DataStructure } from '../../types/information';
+import useFetchTransactions from '../../hooks/fetchTransantionDataHook';
+import LoadingSpinner from './LoadingSpinner';
 var transAceptada = 1234;
 var transRechazada = 456;
 
 const BarChart: React.FC = () => {
+    const { info, loading, error } = useFetchTransactions('https://172.24.11.42/ServiciosBackPR/api/Reportes/RequestValuesReporteCanales');
+    if (loading) return <LoadingSpinner />;
+    if (error) return <div>Error: {error}</div>;
+  //const info: DataStructure = fakeData;
+    // Filtrar las transacciones recibidas
+  const receivedTransactions = info!.ResultadosReportecanalesWipDiario.filter(
+    transaction => transaction.CodRespuesta === '100000'
+  );
+
+  // Filtrar las transacciones rechazadas (asumiendo que CodRespuesta diferente a '100000' es rechazada)
+  const rejectedTransactions = info!.ResultadosReportecanalesWipDiario.filter(
+    transaction => transaction.CodRespuesta !== '100000'
+  );
+
     const data: ChartData<'bar'> = {
         labels: ['Aceptadas', 'Rechazadas'],
         datasets: [{
             label: 'Transacciones',
-            data: [transAceptada, transRechazada],
+
+
+            
+            data: [receivedTransactions.length, rejectedTransactions.length],
             backgroundColor: ['rgba(63, 191, 63, 0.5)', 'rgba(34, 102, 3, 0.5)'],
             borderWidth: 1
         }]
