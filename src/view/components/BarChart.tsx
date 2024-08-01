@@ -6,11 +6,13 @@ import fakeData from '../../data/fakeData.json';
 import { DataStructure } from '../../types/information';
 import useFetchTransactions from '../../hooks/fetchTransantionDataHook';
 import LoadingSpinner from './LoadingSpinner';
+import { useTransactions } from '../../contexts/TransactionContext';
 var transAceptada = 1234;
 var transRechazada = 456;
 
 const BarChart: React.FC = () => {
-    const { info, loading, error } = useFetchTransactions('https://172.24.11.42/ServiciosBackPR/api/Reportes/RequestValuesReporteCanales');
+    //const { info, loading, error } = useFetchTransactions('https://172.24.11.42/ServiciosBackPR/api/Reportes/RequestValuesReporteCanales');
+    const { info, loading, error } = useTransactions();
     if (loading) return <LoadingSpinner />;
     if (error) return <div>Error: {error}</div>;
   //const info: DataStructure = fakeData;

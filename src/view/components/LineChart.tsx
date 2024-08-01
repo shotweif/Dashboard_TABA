@@ -7,12 +7,14 @@ import { DataStructure } from '../../types/information';
 import { getHours, parseISO } from "date-fns";
 import useFetchTransactions from '../../hooks/fetchTransantionDataHook';
 import LoadingSpinner from './LoadingSpinner';
+import { useTransactions } from '../../contexts/TransactionContext';
 
 const LineChart: React.FC = () => {
 
 
     //const info: DataStructure = fakeData;
-    const { info, loading, error } = useFetchTransactions('https://172.24.11.42/ServiciosBackPR/api/Reportes/RequestValuesReporteCanales');
+    //const { info, loading, error } = useFetchTransactions('https://172.24.11.42/ServiciosBackPR/api/Reportes/RequestValuesReporteCanales');
+    const { info, loading, error } = useTransactions();
     if (loading) return <LoadingSpinner />;
     if (error) return <div>Error: {error}</div>;
   const transactionsByHour: { [key: number]: number } = {};

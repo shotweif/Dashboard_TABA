@@ -1,8 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { TransactionsProvider } from "./contexts/TransactionContext";
 
 // // Function to load a script dynamically
 // function loadScript(src: string, attributes: { [key: string]: string } = {}) {
@@ -24,11 +25,13 @@ import reportWebVitals from './reportWebVitals';
 // initializeScripts();
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <TransactionsProvider>
+      <App />
+    </TransactionsProvider>
   </React.StrictMode>
 );
 
