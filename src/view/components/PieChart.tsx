@@ -5,12 +5,14 @@ import fakeData from '../../data/fakeData.json';
 import { DataStructure } from '../../types/information';
 import useFetchTransactions from '../../hooks/fetchTransantionDataHook';
 import LoadingSpinner from './LoadingSpinner';
+import { useTransactions } from '../../contexts/TransactionContext';
 
 const PieChart: React.FC = () => {
 
     //const info: DataStructure = fakeData;
     const PRODUBANCO = 'PRODUBANCO';
-    const { info, loading, error } = useFetchTransactions('https://172.24.11.42/ServiciosBackPR/api/Reportes/RequestValuesReporteCanales');
+    //const { info, loading, error } = useFetchTransactions('https://172.24.11.42/ServiciosBackPR/api/Reportes/RequestValuesReporteCanales');
+    const { info, loading, error } = useTransactions();
     if (loading) return <LoadingSpinner />;
     if (error) return <div>Error: {error}</div>;
   
