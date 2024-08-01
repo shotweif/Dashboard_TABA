@@ -27,11 +27,8 @@ const BarChart: React.FC = () => {
         }
     };
 
-    return (
-        <div className='h-2/4'>
-            <Bar data={data} options={options} />
-        </div>
-    );
+    return <Bar data={data} options={options} />;
+    
 };
 
 export default BarChart;
