@@ -4,7 +4,8 @@ import BarChart from './components/BarChart';
 import PieChart from './components/PieChart';
 import DoughnutChart from './components/DoughnutChart';
 import LineChart from './components/LineChart';
-//import './styles.css';
+import DateFilter from './components/DateFilter';
+import UsersTransactions from './components/UsersTransactions';
 
 const formatDate = (date: Date): string => {
     const year = date.getFullYear();
@@ -15,7 +16,6 @@ const formatDate = (date: Date): string => {
 
 const miFuncion = (): void => {
     const dateInput = (document.getElementById('dateInput') as HTMLInputElement).value;
-    const dateInput2 = (document.getElementById('dateInput2') as HTMLInputElement).value;
     const tipoDeFiltro = document.getElementById('TipodeFiltro') as HTMLHeadingElement;
 
     const today = new Date();
@@ -25,7 +25,7 @@ const miFuncion = (): void => {
     const todayFormatted = formatDate(today);
     const yesterdayFormatted = formatDate(yesterday);
 
-    if (dateInput === yesterdayFormatted && dateInput2 === todayFormatted) {
+    if (dateInput === yesterdayFormatted) {
         tipoDeFiltro.textContent = 'Transacciones diarias';
     } else {
         tipoDeFiltro.textContent = 'Transacciones en Intervalos de Tiempo';
@@ -33,69 +33,32 @@ const miFuncion = (): void => {
 };
 
 const Inicio: React.FC = () => {
-    useEffect(() => {
-        const today = new Date();
-        const yesterday = new Date(today);
-        yesterday.setDate(today.getDate() - 1);
-
-        (document.getElementById('dateInput') as HTMLInputElement).value = formatDate(yesterday);
-        (document.getElementById('dateInput2') as HTMLInputElement).value = formatDate(today);
-
-        document.getElementById('myButton')?.addEventListener('click', miFuncion);
-    }, []);
     return (
         <div className="p-4 bg-gray-200">
-            <h2 className="text-3xl font-bold mb-6 text-primary text-green-800">Transacciones</h2>
+            <div className='p-4 w-full flex items-center	'>
+                <img src="https://www.produbanco.com.ec/media/712553/web.png?format=webp" alt="" className='h-24 mr-2.5	' />
+                <h2 className="text-3xl font-bold mb-6 text-primary text-green-800">Monitoreo de transacciones WIP</h2>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
-
-                <div className="bg-card p-4 h-full rounded-lg shadow hover:shadow-xl transition-shadow duration-300 border-l-4 border-muted bg-green-700 border-green-400">
-                    <h3 className="text-lg font-semibold text-muted text-white">Filtro de fechas</h3>
-                    <div>
-                        <label className="block text-sm font-medium text-muted-foreground">Desde</label>
-                        <input type="date" id="dateInput" className="mt-1 block w-full border border-border rounded-md p-2" placeholder="Pick a date" />
-                    </div>
-                    <div>
-                        <label className="block text-sm font-medium text-muted-foreground">Hasta</label>
-                        <input type="date" id="dateInput2" className="mt-1 block w-full border border-border rounded-md p-2" placeholder="Pick a date" />
-                    </div>
-                    <div className="flex mt-4">
-                        <button id="myButton" className="bg-black text-primary-foreground hover:bg-primary/80 w-full h-9 mr-4 text-white rounded-lg">Filtrar</button>
-                        <button className="bg-black text-primary-foreground hover:bg-primary/80 w-full ml-4 text-white rounded-lg">Limpiar</button>
-                    </div>
-                    <h3 id="TipodeFiltro" className="text-lg font-semibold text-secondary m-10 text-center text-white"></h3>
+                <div className="bg-card p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 border-l-4 border-muted bg-green-700 border-green-400">
+                    <DateFilter onFilter={miFuncion} />
                 </div>
 
                 <div className="bg-card h-full p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 border-l-4 border-secondary bg-white border-green-400">
-                    
-                    <h3 className="text-lg font-semibold text-secondary text-green-600">Usuarios Activos</h3>
-                    <p className="text-4xl font-bold text-primary-foreground">3,456</p>
-
-                    <h3 className="text-lg font-semibold text-secondary text-green-600 pt-10">Total de Transacciones</h3>
-                    <p className="text-4xl font-bold text-primary-foreground">1,768</p>
-
-                    <h3 className="text-lg font-semibold text-secondary text-green-600 pt-10">Total Histórico</h3>
-                    <p className="text-4xl font-bold text-primary-foreground">1000,768</p>
-
+                    <UsersTransactions />
                 </div>
 
-                <div className="p-4 w-full h-full rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-2 bg-white">
+                <div className="p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-2 bg-white">
                     <LineChart />
                 </div>
+
+
+
             </div>
             <div>
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
-                    <div className="bg-card p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 border-l-4 border-secondary bg-white border-green-400">
-                        <h3 className="text-lg font-semibold text-secondary text-green-600">Usuarios Activos</h3>
-                        <p className="text-4xl font-bold text-primary-foreground">3,456</p>
 
-                        <h3 className="text-lg font-semibold text-secondary text-green-600 pt-10">Total de Transacciones</h3>
-                        <p className="text-4xl font-bold text-primary-foreground">1,768</p>
-
-                        <h3 className="text-lg font-semibold text-secondary text-green-600 pt-10">Total Historio</h3>
-                        <p className="text-4xl font-bold text-primary-foreground">1000,768</p>
-
-                    </div>
 
                     <div className="bg-card p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-1 border-l-4 border-secondary bg-white border-green-400">
                         <BarChart />

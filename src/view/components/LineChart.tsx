@@ -1,4 +1,3 @@
-// LineChart.tsx
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { ChartData, ChartOptions } from 'chart.js';
@@ -19,8 +18,8 @@ const LineChart: React.FC = () => {
             ],
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderColor: 'rgba(63, 191, 63, 1)',
-            borderWidth: 2,
-            fill: true
+            borderWidth: 1,
+            fill: true,
         }]
     };
 
@@ -36,7 +35,11 @@ const LineChart: React.FC = () => {
         }
     };
 
-    return <Line data={data} options={options} />;
+    return (
+        <div className='w-full h-full'>
+            <Line data={data} options={options} />
+        </div>
+    );
 };
 
 export default LineChart;
