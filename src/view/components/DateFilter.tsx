@@ -31,7 +31,6 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter }) => {
       </div>
       <div className="flex mt-4">
         <button id="myButton" className="bg-black text-primary-foreground hover:bg-primary/80 w-full h-9 mr-4 text-white rounded-lg">Filtrar</button>
-        <button className="bg-black text-primary-foreground hover:bg-primary/80 w-full ml-4 text-white rounded-lg">Limpiar</button>
       </div>
       <h3 id="TipodeFiltro" className="text-lg font-semibold text-secondary m-10 text-center text-white"></h3>
     </div>
@@ -39,3 +38,4 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter }) => {
 };
 
 export default DateFilter;
+//         <button className="bg-black text-primary-foreground hover:bg-primary/80 w-full ml-4 text-white rounded-lg">Limpiar</button>

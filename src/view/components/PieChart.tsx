@@ -1,3 +1,4 @@
+// PieChart.tsx
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
 import { ChartData, ChartOptions } from 'chart.js';
@@ -24,7 +25,7 @@ const PieChart: React.FC = () => {
 
     return <div>
         <h3 className="text-lg font-semibold text-primary text-green-600">Origen de Transacciones</h3>
-        <p className="text-sm text-muted-foreground b-b-">Usuarios que abandonaron la plataforma</p>
+        <p className="text-sm text-muted-foreground pb-10">Usuarios que abandonaron la plataforma</p>
         <Pie data={data} options={options} />
     </div>;
 };

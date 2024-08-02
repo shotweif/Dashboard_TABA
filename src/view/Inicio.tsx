@@ -26,7 +26,7 @@ const miFuncion = (): void => {
     const yesterdayFormatted = formatDate(yesterday);
 
     if (dateInput === yesterdayFormatted) {
-        tipoDeFiltro.textContent = 'Transacciones diarias';
+        tipoDeFiltro.textContent = 'Transacciones del diarias';
     } else {
         tipoDeFiltro.textContent = 'Transacciones en Intervalos de Tiempo';
     }
@@ -34,7 +34,7 @@ const miFuncion = (): void => {
 
 const Inicio: React.FC = () => {
     return (
-        <div className="p-4 bg-gray-200">
+        <div className="p-4 bg-gray-200 h-full">
             <div className='p-4 w-full flex items-center	'>
                 <img src="https://www.produbanco.com.ec/media/712553/web.png?format=webp" alt="" className='h-24 mr-2.5	' />
                 <h2 className="text-3xl font-bold mb-6 text-primary text-green-800">Monitoreo de transacciones WIP</h2>
