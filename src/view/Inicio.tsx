@@ -35,9 +35,16 @@ const miFuncion = (): void => {
 const Inicio: React.FC = () => {
     return (
         <div className="p-4">
-            <div className='p-4 w-full flex items-center	'>
-                <img src="https://www.produbanco.com.ec/media/712553/web.png?format=webp" alt="" className='h-24 mr-2.5	' />
-                <h2 className="text-3xl font-bold mb-6 text-primary text-green-800">Monitoreo de transacciones WIP</h2>
+            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4 '>
+                <div className='bg-card col-span-1 flex h-12 pl-4'>
+                    <img src="https://www.produbanco.com.ec/media/712553/web.png?format=webp" alt="" className='' />
+                </div>
+                <div className='bg-card col-span-3 flex h-12 items-center'>
+                    <h2 className="text-3xl font-bold text-primary text-green-800 leading-10">
+                        Monitoreo de transacciones WIP
+                    </h2>
+                </div>
+
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">

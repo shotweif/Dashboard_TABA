@@ -22,20 +22,21 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter }) => {
     document.getElementById('myButton')?.addEventListener('click', onFilter);
   }, [onFilter]);
 
-  return (
+
+return (
+  <div>
+
+    <h3 className="text-lg font-semibold text-muted text-white text-2xl	">Filtro de fechas</h3>
     <div>
-      
-      <h3 className="text-lg font-semibold text-muted text-white text-2xl	">Filtro de fechas</h3>
-      <div>
-        <input type="date" id="dateInput" className="mt-1 block w-full border border-border rounded-md p-2" placeholder="Pick a date" />
-      </div>
-      <div className="flex mt-4">
-        <button id="myButton" className="bg-black text-primary-foreground hover:bg-primary/80 w-full h-9 mr-4 text-white rounded-lg">Filtrar</button>
-      </div>
-      <h3 id="TipodeFiltro" className="text-lg font-semibold text-secondary m-10 text-center text-white"></h3>
+      <input type="date" id="dateInput" className="mt-1 block w-full border border-border rounded-md p-2" placeholder="Pick a date" />
     </div>
-  );
+    <div className="mt-4">
+      <button id="myButton" className="bg-green-900 text-primary-foreground hover:bg-primary/80 w-full h-9 text-white rounded-lg">Filtrar</button>
+      <button id='ButtonDay' className="bg-black text-primary-foreground hover:bg-primary/80 w-full h-9 text-white rounded-lg my-2">Limpiar</button>
+    </div>
+    <h3 id="TipodeFiltro" className="text-lg font-semibold text-secondary m-10 text-center text-white"></h3>
+  </div>
+);
 };
 
 export default DateFilter;
-//         <button className="bg-black text-primary-foreground hover:bg-primary/80 w-full ml-4 text-white rounded-lg">Limpiar</button>
