@@ -33,7 +33,7 @@ const DoughnutChart: React.FC = () => {
     //    return <Doughnut data={data} options={options} />;
     return (
         <div>
-            <h3 className="text-lg font-semibold text-accent text-green-600">Tasa de Deserción</h3>
+            <h3 className="text-lg font-semibold text-2xl text-accent text-green-600">Tasa de Deserción</h3>
             <p className="text-4xl font-bold text-primary-foreground">{porcentaje.toFixed(2)}%</p>
             <p className="text-sm text-muted-foreground">Usuarios que abandonaron la plataforma</p>
             <Doughnut data={data} options={options} />

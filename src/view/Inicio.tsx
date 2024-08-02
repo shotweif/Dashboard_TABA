@@ -34,32 +34,26 @@ const miFuncion = (): void => {
 
 const Inicio: React.FC = () => {
     return (
-        <div className="p-4 bg-gray-200 h-full">
+        <div className="p-4">
             <div className='p-4 w-full flex items-center	'>
                 <img src="https://www.produbanco.com.ec/media/712553/web.png?format=webp" alt="" className='h-24 mr-2.5	' />
                 <h2 className="text-3xl font-bold mb-6 text-primary text-green-800">Monitoreo de transacciones WIP</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
-                <div className="bg-card p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 border-l-4 border-muted bg-green-700 border-green-400">
+                <div className="bg-card h-96 p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-1 bg-green-700">
                     <DateFilter onFilter={miFuncion} />
                 </div>
 
-                <div className="bg-card h-full p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 border-l-4 border-secondary bg-white border-green-400">
-                    <UsersTransactions />
-                </div>
-
-                <div className="p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-2 bg-white">
+                <div className="bg-card p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-3 bg-white">
                     <LineChart />
                 </div>
-
-
-
             </div>
             <div>
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
-
-
+                    <div className="bg-card h-full p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-1 border-l-4 border-secondary bg-white border-green-400">
+                        <UsersTransactions />
+                    </div>
                     <div className="bg-card p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-1 border-l-4 border-secondary bg-white border-green-400">
                         <BarChart />
                     </div>

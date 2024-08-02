@@ -19,7 +19,7 @@ function App() {
     }, []);
 
     return (
-        <div className=''>
+        <div className='st-sl-app'>
             {stylesLoaded ? (
                 <BrowserRouter>
                     <Routes>

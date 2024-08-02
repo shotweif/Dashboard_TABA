@@ -24,7 +24,7 @@ const PieChart: React.FC = () => {
     };
 
     return <div>
-        <h3 className="text-lg font-semibold text-primary text-green-600">Origen de Transacciones</h3>
+        <h3 className="text-lg font-semibold text-primary text-green-600 text-2xl	">Origen de Transacciones</h3>
         <p className="text-sm text-muted-foreground pb-10">Usuarios que abandonaron la plataforma</p>
         <Pie data={data} options={options} />
     </div>;

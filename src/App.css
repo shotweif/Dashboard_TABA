@@ -1,7 +1,10 @@
 .App {
   text-align: center;
 }
-
+.st-sl-app{
+  background-color: #f3f3f3;
+  min-height: 100vh;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -54,3 +57,6 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+
+

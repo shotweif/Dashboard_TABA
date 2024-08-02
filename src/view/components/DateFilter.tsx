@@ -25,7 +25,7 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter }) => {
   return (
     <div>
       
-      <h3 className="text-lg font-semibold text-muted text-white">Filtro de fechas</h3>
+      <h3 className="text-lg font-semibold text-muted text-white text-2xl	">Filtro de fechas</h3>
       <div>
         <input type="date" id="dateInput" className="mt-1 block w-full border border-border rounded-md p-2" placeholder="Pick a date" />
       </div>
