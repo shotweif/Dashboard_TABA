@@ -17,10 +17,19 @@ export const TransactionsProvider: React.FC<{ children: ReactNode }> = ({ childr
 
   useEffect(() => {
     const fetchData = async () => {
+
+      const controller = new AbortController();
+      const signal = controller.signal;
+
+      const timeoutId = setTimeout(() => controller.abort(), 300000);
       try {
         const response = await fetch('https://172.24.11.42/ServiciosBackPR/api/Reportes/RequestValuesReporteCanales', {
           mode: 'cors',
+          signal
         });
+
+        clearTimeout(timeoutId);
+        
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
