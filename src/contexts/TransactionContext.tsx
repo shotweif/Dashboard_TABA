@@ -31,7 +31,8 @@ export const TransactionsProvider: React.FC<{ children: ReactNode }> = ({ childr
         clearTimeout(timeoutId);
         
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          const errorMessage = `Error: ${response.status} ${response.statusText}`;
+          throw new Error(errorMessage);
         }
         const result: DataStructure = await response.json();
         setInfo(result);
