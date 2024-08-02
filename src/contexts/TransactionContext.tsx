@@ -18,7 +18,9 @@ export const TransactionsProvider: React.FC<{ children: ReactNode }> = ({ childr
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://172.24.11.42/ServiciosBackPR/api/Reportes/RequestValuesReporteCanales');
+        const response = await fetch('https://172.24.11.42/ServiciosBackPR/api/Reportes/RequestValuesReporteCanales', {
+          mode: 'cors',
+        });
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
