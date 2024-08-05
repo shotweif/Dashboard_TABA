@@ -47,23 +47,39 @@
   align-items: center;
   width: 100%;
   height: 100vh;
+  h4{
+    margin-top: 10px;
+  }
 }
-
-.loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #63db34; /* Blue */
+.loader-container{
+  position: relative;
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  animation: spin 2s linear infinite;
-  img{
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
-  }
+  text-align: center;
 }
-
+.loader {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #63db34; /* Blue */
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+.logoPro{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/*  Otros */
+.st-hv-cl:hover{
+  background: #79cf57;  
 }

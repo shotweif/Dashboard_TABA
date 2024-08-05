@@ -1,12 +1,14 @@
 // Loader.tsx
 import React from 'react';
-import startPro  from '../images/startPro.png';
+import startPro from '../images/startPro.png';
 
 const Loader: React.FC = () => {
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-200 st-int-stl">
-            <div className="loader">
-                <img src={startPro} />
+            <div className='loader-container'>
+                <img src={startPro} className='logoPro' />
+                <div className="loader"></div>
+                <h4>Cargando...</h4>
             </div>
         </div>
     );

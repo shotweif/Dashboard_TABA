@@ -36,8 +36,8 @@ const Inicio: React.FC = () => {
     return (
         <div className="p-4">
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4 '>
-                <div className='bg-card col-span-1 flex h-12 pl-4'>
-                    <img src="https://www.produbanco.com.ec/media/712553/web.png?format=webp" alt="" className='h-full' />
+                <div className='bg-card col-span-1 flex h-12 pl-4 pointer-events-none select-none'>
+                    <img src="https://www.produbanco.com.ec/media/712553/web.png?format=webp" alt="" className='h-full ' />
                 </div>
                 <div className='bg-card col-span-3 flex h-12 items-center'>
                     <h2 className="text-3xl font-bold text-primary text-green-800 leading-10">
