@@ -24,7 +24,6 @@ function App() {
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<Inicio />} />
-                        <Route path="/Loader" element={<Loader />} />
                     </Routes>
                 </BrowserRouter>
             ) : (
