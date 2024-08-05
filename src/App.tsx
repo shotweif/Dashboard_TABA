@@ -5,6 +5,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Inicio from './view/Inicio';
+import TransaccionesWEP from './view/TransaccionesWEP';
 import Loader from './view/Loader';
 import './chartSetup';
 
@@ -29,7 +30,8 @@ function App() {
                 <div className='st-sl-app w-full'>
                     {stylesLoaded ? (
                             <Routes>
-                                <Route path="/" element={<Inicio />} />
+                                <Route path="/" element={<TransaccionesWEP />} />
+                                <Route path="/Inicio" element={<Inicio />} />
                                 <Route path="/Loader" element={<Loader />} />
                             </Routes>
                     ) : (
