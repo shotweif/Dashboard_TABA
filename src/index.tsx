@@ -4,25 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// // Function to load a script dynamically
-// function loadScript(src: string, attributes: { [key: string]: string } = {}) {
-//   const script = document.createElement('script');
-//   script.src = src;
-//   Object.keys(attributes).forEach(key => {
-//     script.setAttribute(key, attributes[key]);
-//   });
-//   document.head.appendChild(script);
-// }
-
-// function initializeScripts() {
-//   loadScript('https://cdn.tailwindcss.com?plugins=forms,typography');
-//   // loadScript('https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js', { defer: 'true', init: '' });
-//   // loadScript('https://cdn.jsdelivr.net/npm/chart.js');
-// }
-
-// // Initialize scripts
-// initializeScripts();
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

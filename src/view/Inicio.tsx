@@ -1,9 +1,13 @@
 import React, { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ImgTransaccion from '../ico/Transaccion.svg';
-import ImgNone from '../ico/None.svg';
+// import ImgTransaccion from '../ico/Transaccion.svg';
+// import ImgNone from '../ico/None.svg';
 
 const Inicio: React.FC = () => {
+    const ImgTransaccion = process.env.PUBLIC_URL + '/ico/Transaccion.svg';
+    const ImgBanck = process.env.PUBLIC_URL + '/ico/Banco.svg';
+    const ImgNone = process.env.PUBLIC_URL + '/ico/None.svg';
+
     // Navegacion
     const navigate = useNavigate();
     const handleTransaccion = () => {
@@ -18,7 +22,9 @@ const Inicio: React.FC = () => {
     return (
         <div className=''>
             <div className='flex justify-center items-center h-20'>
-                <h1 className='text-3xl font-semibold text-secondary text-green-600'>DashBoard</h1>
+                <h1 className='text-3xl font-semibold text-secondary text-green-600'>
+                    DashBoard de Procesos
+                </h1>
             </div>
             <div className='flex justify-center items-center my-2.5'>
 

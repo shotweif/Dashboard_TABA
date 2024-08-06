@@ -1,42 +1,47 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-interface DateFilterProps {
-  onFilter: () => void;
-}
+const DateFilter: React.FC = () => {
+  const [selectedDate, setSelectedDate] = useState<string>(''); // Fecha seleccionada
+  const [filterMessage, setFilterMessage] = useState<string>(''); // Mensaje de accion
 
-const DateFilter: React.FC<DateFilterProps> = ({ onFilter }) => {
-  const formatDate = (date: Date): string => {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
+  // Declaracion de la fecha actual
+  useEffect(() => {
+    const today = new Date().toISOString().split('T')[0];
+    setSelectedDate(today);
+  }, []);
+
+  // Boton de filtrar
+  const handleFilterClick = () => {
+    console.log(`Fecha seleccionada: ${selectedDate}`);
+    setFilterMessage('Se está filtrando por fecha');
   };
 
-  useEffect(() => {
-    const today = new Date();
-    const yesterday = new Date(today);
-    yesterday.setDate(today.getDate() - 1);
+  // boton de limpiar filtro
+  const handleClearClick = () => {
+    setSelectedDate(new Date().toISOString().split('T')[0]);
+    setFilterMessage('Estos son los últimos datos');
+  };
 
-    (document.getElementById('dateInput') as HTMLInputElement).value = formatDate(yesterday);
-
-    document.getElementById('myButton')?.addEventListener('click', onFilter);
-  }, [onFilter]);
-
-
-return (
-  <div>
-
-    <h3 className="text-lg font-semibold text-muted text-white text-2xl	">Filtro de fechas</h3>
+  return (
     <div>
-      <input type="date" id="dateInput" className="mt-1 block w-full border border-border rounded-md p-2" placeholder="Pick a date" />
+      <h3 className="text-lg font-semibold text-muted text-white text-2xl">Filtro de fechas</h3>
+      <div>
+        <input type="date" id="dateInput" className="mt-1 block w-full border border-border rounded-md p-2" value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)}
+        />
+      </div>
+      <div className="mt-4">
+        <button id="myButton" className="bg-green-900 text-primary-foreground hover:bg-primary/80 w-full h-9 text-white rounded-lg" onClick={handleFilterClick} >
+          Filtrar
+        </button>
+        <button id="ButtonDay" className="bg-black text-primary-foreground hover:bg-primary/80 w-full h-9 text-white rounded-lg my-2" onClick={handleClearClick} >
+          Limpiar
+        </button>
+      </div>
+      <h3 id="TipodeFiltro" className="text-lg font-semibold text-secondary m-10 text-center text-white">
+        {filterMessage}
+      </h3>
     </div>
-    <div className="mt-4">
-      <button id="myButton" className="bg-green-900 text-primary-foreground hover:bg-primary/80 w-full h-9 text-white rounded-lg">Filtrar</button>
-      <button id='ButtonDay' className="bg-black text-primary-foreground hover:bg-primary/80 w-full h-9 text-white rounded-lg my-2">Limpiar</button>
-    </div>
-    <h3 id="TipodeFiltro" className="text-lg font-semibold text-secondary m-10 text-center text-white"></h3>
-  </div>
-);
+  );
 };
 
 export default DateFilter;
