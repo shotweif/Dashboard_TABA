@@ -3,17 +3,26 @@ import React, { useState, useEffect } from 'react';
 const DateFilter: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<string>(''); // Fecha seleccionada
   const [filterMessage, setFilterMessage] = useState<string>(''); // Mensaje de accion
+  const [todayDate, settodayDate] = useState<string>('');
+  // const [minDate, setMinDate] = useState<string>(''); // Fecha mínima permitida
 
   // Declaracion de la fecha actual
   useEffect(() => {
     const today = new Date().toISOString().split('T')[0];
     setSelectedDate(today);
+    settodayDate(today)
   }, []);
 
   // Boton de filtrar
   const handleFilterClick = () => {
     console.log(`Fecha seleccionada: ${selectedDate}`);
+    if (selectedDate != todayDate) {
+      setFilterMessage('Fecha incorrecta o fuera de rango');
+      return false;
+    }
     setFilterMessage('Se está filtrando por fecha');
+    return true;
+
   };
 
   // boton de limpiar filtro
@@ -26,7 +35,11 @@ const DateFilter: React.FC = () => {
     <div>
       <h3 className="text-lg font-semibold text-muted text-white text-2xl">Filtro de fechas</h3>
       <div>
-        <input type="date" id="dateInput" className="mt-1 block w-full border border-border rounded-md p-2" value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)}
+        <input type="date" id="dateInput" className="mt-1 block w-full border border-border rounded-md p-2"
+          value={selectedDate}
+          // min={minDate}
+          max={todayDate}
+          onChange={(e) => setSelectedDate(e.target.value)}
         />
       </div>
       <div className="mt-4">

@@ -32,9 +32,6 @@ function App() {
                             <Routes>
                                 <Route path="/" element={<TransaccionesWEP />} />
                                 <Route path="/Inicio" element={<Inicio />} />
-                                <Route path="/Loader" element={<Loader />} />
-                                <Route path="/Pruebas" element={<Pruebas />} />
-
                             </Routes>
                     ) : (
                         <Loader />

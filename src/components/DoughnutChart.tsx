@@ -3,11 +3,14 @@ import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import { ChartData, ChartOptions } from 'chart.js';
 
-var transaccionesTotal: number = 1324;
-var transaccionesDesercion: number = 30;
-var porcentaje = (transaccionesDesercion / transaccionesTotal) * 100;
+interface DoughnutChartProps {
+    transaccionesTotal: number;
+    transaccionesDesercion: number;
+}
 
-const DoughnutChart: React.FC = () => {
+const DoughnutChart: React.FC <DoughnutChartProps> = ({transaccionesTotal, transaccionesDesercion}) => {
+    var porcentaje = (transaccionesDesercion / transaccionesTotal) * 100;
+
     const data: ChartData<'doughnut'> = {
         labels: ['Valor', 'Restante'],
         datasets: [{

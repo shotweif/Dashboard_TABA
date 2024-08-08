@@ -2,10 +2,12 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import { ChartData, ChartOptions } from 'chart.js';
 
-var transAceptada = 1234;
-var transRechazada = 456;
+interface BarChartProps {
+    transAceptada: number;
+    transRechazada: number;
+}
 
-const BarChart: React.FC = () => {
+const BarChart: React.FC <BarChartProps> = ({transAceptada, transRechazada}) => {
     const data: ChartData<'bar'> = {
         labels: ['Aceptadas', 'Rechazadas'],
         datasets: [{

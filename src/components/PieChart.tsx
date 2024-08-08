@@ -3,10 +3,12 @@ import React from 'react';
 import { Pie } from 'react-chartjs-2';
 import { ChartData, ChartOptions } from 'chart.js';
 
-var locales = 576;
-var externos = 456;
+interface PieChartProps {
+    locales: number;
+    externos: number;
+}
 
-const PieChart: React.FC = () => {
+const PieChart: React.FC <PieChartProps> = ({locales, externos}) => {
     const data: ChartData<'pie'> = {
         labels: ['A otros bancos', 'Locales'],
         datasets: [{
