@@ -9,19 +9,18 @@ import { useTransactions } from '../../contexts/TransactionContext';
 
 const PieChart: React.FC = () => {
 
-    //const info: DataStructure = fakeData;
+    const info: DataStructure = fakeData;
     const PRODUBANCO = 'PRODUBANCO';
-    //const { info, loading, error } = useFetchTransactions('https://172.24.11.42/ServiciosBackPR/api/Reportes/RequestValuesReporteCanales');
-    const { info, loading, error } = useTransactions();
-    if (loading) return <LoadingSpinner />;
-    if (error) return <div>Error: {error}</div>;
+    //const { info, loading, error } = useTransactions();
+    //if (loading) return <LoadingSpinner />;
+    //if (error) return <div>Error: {error}</div>;
   
    
-    const localTransactions = info!.ResultadosReportecanalesWipDiario.filter(
+    const localTransactions = info!.ResultadosReporteCanalesWip.filter(
       transaction => transaction.BancoOrigen === PRODUBANCO && transaction.BancoDestino === PRODUBANCO
     );
   
-    const externalTransactions = info!.ResultadosReportecanalesWipDiario.length - localTransactions.length;
+    const externalTransactions = info!.ResultadosReporteCanalesWip.length - localTransactions.length;
     const data: ChartData<'pie'> = {
         labels: ['A otros bancos', 'Locales'],
         datasets: [{

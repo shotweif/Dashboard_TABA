@@ -17,8 +17,8 @@ export interface Transaccion {
     Monto: number;
 }
 
-export interface ResultadosReportecanalesWipDiario {
-    ResultadosReportecanalesWipDiario: Transaccion[];
+export interface ResultadosReporteCanalesWip {
+    ResultadosReporteCanalesWip: Transaccion[];
 }
 
 export interface ClientesAtados {
@@ -27,7 +27,7 @@ export interface ClientesAtados {
 }
 
 export interface DataStructure {
-    ResultadosReportecanalesWipDiario: Transaccion[];
+    ResultadosReporteCanalesWip: Transaccion[];
     ResultadosReportecanalesWipHistorico: any[];
     ClientesAtados: ClientesAtados;
 }
