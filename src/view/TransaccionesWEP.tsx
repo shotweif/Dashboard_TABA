@@ -6,8 +6,14 @@ import DoughnutChart from '../components/DoughnutChart';
 import LineChart from '../components/LineChart';
 import DateFilter from '../components/DateFilter';
 import UsersTransactions from '../components/UsersTransactions';
+import useFetchTransactions from '../hooks/useFetchDataHook';
+import { DataStructure } from '../types/information';
+import fakeData from '../data/fakeData.json';
 
 const TransaccionesWEP: React.FC = () => {
+
+    const info: DataStructure = fakeData;
+   // const { info, loading, error } = useFetchTransactions();
 
     // Grafico de lineas
     const totales = [120, 115, 130, 110, 100, 105, 120, 140, 150, 160, 170, 180, 200, 220, 240, 230, 210, 190, 180, 170, 160, 150, 140, 130];
@@ -33,6 +39,10 @@ const TransaccionesWEP: React.FC = () => {
     // Grafico de anillo
     const transaccionesTotal = 1324;
     const transaccionesDesercion = 30;
+
+
+
+
 
 
     return (
