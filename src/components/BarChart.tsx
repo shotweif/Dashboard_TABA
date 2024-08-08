@@ -1,10 +1,11 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import { ChartData, ChartOptions } from 'chart.js';
+import { Transaccion } from '../types/information';
 
 interface BarChartProps {
-    transAceptada: number;
-    transRechazada: number;
+    transAceptada: Transaccion[];
+    transRechazada: Transaccion[];	
 }
 
 const BarChart: React.FC <BarChartProps> = ({transAceptada, transRechazada}) => {
@@ -12,7 +13,7 @@ const BarChart: React.FC <BarChartProps> = ({transAceptada, transRechazada}) => 
         labels: ['Aceptadas', 'Rechazadas'],
         datasets: [{
             label: 'Transacciones',
-            data: [transAceptada, transRechazada],
+            data: [transAceptada.length, transRechazada.length],
             backgroundColor: ['rgba(63, 191, 63, 0.5)', 'rgba(34, 102, 3, 0.5)'],
             borderWidth: 1
         }]

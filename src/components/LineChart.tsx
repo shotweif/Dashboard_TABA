@@ -5,7 +5,7 @@ import { ChartData, ChartOptions } from 'chart.js';
 
 interface LineChartProps {
     transaccionesTotales: number[];
-    rangoTiempo: string[];
+    rangoTiempo: number[];
 }
 
 const LineChart: React.FC<LineChartProps> = ({ transaccionesTotales, rangoTiempo }) => {
