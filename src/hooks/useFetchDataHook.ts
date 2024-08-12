@@ -11,7 +11,7 @@ const useFetchTransactions = (selectedDate: string) => {
       const date = new Date(selectedDate).toISOString();
       try {
         const response = await fetch('https://UIOMATRV-DVOP02.corp.gfp.com/ServiciosBackPR/api/Reportes/RequestValuesReporteCanales', {
-          headers: new Headers({ 'accept': '*/*', 'fechaconsulta': selectedDate }),
+          headers: new Headers({ 'accept': '*/*', 'fechaconsulta': date }),
           mode: 'cors'
         });
 
