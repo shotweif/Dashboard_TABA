@@ -7,7 +7,7 @@
       "BancoOrigen": "INTERNACIONAL",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T11:46:38",
+      "FechaTrx": "2024-07-30T11:46:38",
       "AliasOrigen": "",
       "AliasDestino": "0987319467",
       "Monto": 12.38
@@ -19,7 +19,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T11:44:18",
+      "FechaTrx": "2024-07-30T11:44:18",
       "AliasOrigen": "0992741389",
       "AliasDestino": "0969658863",
       "Monto": 30
@@ -31,7 +31,7 @@
       "BancoOrigen": "GUAYAQUIL",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T11:37:23",
+      "FechaTrx": "2024-07-29T11:37:23",
       "AliasOrigen": "",
       "AliasDestino": "0992428551",
       "Monto": 3.5
@@ -43,7 +43,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "INTERNACIONAL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T11:32:27",
+      "FechaTrx": "2024-07-29T11:32:27",
       "AliasOrigen": "0969081176",
       "AliasDestino": "0986211362",
       "Monto": 1.7
@@ -55,7 +55,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T11:10:53",
+      "FechaTrx": "2024-07-28T11:10:53",
       "AliasOrigen": "0995766793",
       "AliasDestino": "0984877124",
       "Monto": 15.4
@@ -67,7 +67,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T11:10:48",
+      "FechaTrx": "2024-07-28T11:10:48",
       "AliasOrigen": "0995766793",
       "AliasDestino": "0984877124",
       "Monto": 15.4
@@ -79,7 +79,7 @@
       "BancoOrigen": "INTERNACIONAL",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:57:02",
+      "FechaTrx": "2024-07-27T10:57:02",
       "AliasOrigen": "",
       "AliasDestino": "0999178777",
       "Monto": 10
@@ -91,7 +91,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:52:02",
+      "FechaTrx": "2024-07-27T10:52:02",
       "AliasOrigen": "0963682088",
       "AliasDestino": "0968318320",
       "Monto": 50
@@ -103,7 +103,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "INTERNACIONAL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:43:26",
+      "FechaTrx": "2024-07-26T10:43:26",
       "AliasOrigen": "0999088977",
       "AliasDestino": "0999341244",
       "Monto": 9.69
@@ -115,7 +115,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:42:26",
+      "FechaTrx": "2024-07-26T10:42:26",
       "AliasOrigen": "0999716887",
       "AliasDestino": "0992741389",
       "Monto": 2.92
@@ -127,7 +127,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:42:22",
+      "FechaTrx": "2024-07-25T10:42:22",
       "AliasOrigen": "0999716887",
       "AliasDestino": "0992741389",
       "Monto": 2.92
@@ -139,7 +139,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:42:04",
+      "FechaTrx": "2024-07-25T10:42:04",
       "AliasOrigen": "0984254749",
       "AliasDestino": "0993266544",
       "Monto": 17
@@ -151,7 +151,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:41:29",
+      "FechaTrx": "2024-07-30T10:41:29",
       "AliasOrigen": "0984254749",
       "AliasDestino": "0993266544",
       "Monto": 50
@@ -163,7 +163,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:40:51",
+      "FechaTrx": "2024-07-30T10:40:51",
       "AliasOrigen": "0984254749",
       "AliasDestino": "0993266544",
       "Monto": 50
@@ -175,7 +175,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:39:35",
+      "FechaTrx": "2024-07-30T10:39:35",
       "AliasOrigen": "0984487072",
       "AliasDestino": "0985112005",
       "Monto": 5.42
@@ -187,7 +187,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "103078",
-      "FechaTrx": "2024-07-31T10:36:50",
+      "FechaTrx": "2024-07-30T10:36:50",
       "AliasOrigen": "0978751608",
       "AliasDestino": "0962548287",
       "Monto": 50
@@ -199,7 +199,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:36:18",
+      "FechaTrx": "2024-07-30T10:36:18",
       "AliasOrigen": "0978751608",
       "AliasDestino": "0962548287",
       "Monto": 50
@@ -211,7 +211,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:35:50",
+      "FechaTrx": "2024-07-30T10:35:50",
       "AliasOrigen": "0978751608",
       "AliasDestino": "0962548287",
       "Monto": 50
@@ -223,7 +223,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:35:13",
+      "FechaTrx": "2024-07-30T10:35:13",
       "AliasOrigen": "0978751608",
       "AliasDestino": "0962548287",
       "Monto": 50
@@ -235,7 +235,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:34:41",
+      "FechaTrx": "2024-07-30T10:34:41",
       "AliasOrigen": "0978751608",
       "AliasDestino": "0962548287",
       "Monto": 50
@@ -247,7 +247,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:29:40",
+      "FechaTrx": "2024-07-29T10:29:40",
       "AliasOrigen": "0990339292",
       "AliasDestino": "0963605150",
       "Monto": 2.11
@@ -259,7 +259,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:29:36",
+      "FechaTrx": "2024-07-29T10:29:36",
       "AliasOrigen": "0990339292",
       "AliasDestino": "0963605150",
       "Monto": 2.11
@@ -271,7 +271,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:23:42",
+      "FechaTrx": "2024-07-28T10:23:42",
       "AliasOrigen": "0962900012",
       "AliasDestino": "0962301663",
       "Monto": 8
@@ -283,7 +283,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:23:39",
+      "FechaTrx": "2024-07-28T10:23:39",
       "AliasOrigen": "0962900012",
       "AliasDestino": "0962301663",
       "Monto": 8
@@ -295,7 +295,7 @@
       "BancoOrigen": "INTERNACIONAL",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:23:08",
+      "FechaTrx": "2024-07-28T10:23:08",
       "AliasOrigen": "",
       "AliasDestino": "0995848976",
       "Monto": 2
@@ -307,7 +307,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "INTERNACIONAL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T10:10:50",
+      "FechaTrx": "2024-07-27T10:10:50",
       "AliasOrigen": "0983780088",
       "AliasDestino": "0979242307",
       "Monto": 49.75
@@ -319,7 +319,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T09:56:28",
+      "FechaTrx": "2024-07-27T09:56:28",
       "AliasOrigen": "0958724280",
       "AliasDestino": "0961111992",
       "Monto": 12.5
@@ -331,7 +331,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T09:56:25",
+      "FechaTrx": "2024-07-27T09:56:25",
       "AliasOrigen": "0958724280",
       "AliasDestino": "0961111992",
       "Monto": 12.5
@@ -343,7 +343,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T09:54:37",
+      "FechaTrx": "2024-07-27T09:54:37",
       "AliasOrigen": "0980448923",
       "AliasDestino": "0980462066",
       "Monto": 3.75
@@ -355,7 +355,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T09:54:32",
+      "FechaTrx": "2024-07-26T09:54:32",
       "AliasOrigen": "0980448923",
       "AliasDestino": "0980462066",
       "Monto": 3.75
@@ -367,7 +367,7 @@
       "BancoOrigen": "GUAYAQUIL",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T09:43:44",
+      "FechaTrx": "2024-07-26T09:43:44",
       "AliasOrigen": "",
       "AliasDestino": "0982420199",
       "Monto": 40
@@ -379,7 +379,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T09:42:26",
+      "FechaTrx": "2024-07-26T09:42:26",
       "AliasOrigen": "0992677346",
       "AliasDestino": "0963095724",
       "Monto": 1
@@ -391,7 +391,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T09:42:23",
+      "FechaTrx": "2024-07-25T09:42:23",
       "AliasOrigen": "0992677346",
       "AliasDestino": "0963095724",
       "Monto": 1
@@ -403,7 +403,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T09:28:27",
+      "FechaTrx": "2024-07-25T09:28:27",
       "AliasOrigen": "0983205158",
       "AliasDestino": "0984021514",
       "Monto": 50
@@ -415,7 +415,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T09:27:16",
+      "FechaTrx": "2024-07-25T09:27:16",
       "AliasOrigen": "0983205158",
       "AliasDestino": "0984021514",
       "Monto": 50
@@ -427,7 +427,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T09:26:36",
+      "FechaTrx": "2024-07-25T09:26:36",
       "AliasOrigen": "0983205158",
       "AliasDestino": "0984021514",
       "Monto": 50
@@ -439,7 +439,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T09:26:00",
+      "FechaTrx": "2024-07-30T09:26:00",
       "AliasOrigen": "0983205158",
       "AliasDestino": "0984021514",
       "Monto": 50
@@ -451,7 +451,7 @@
       "BancoOrigen": "GUAYAQUIL",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T09:16:23",
+      "FechaTrx": "2024-07-30T09:16:23",
       "AliasOrigen": "",
       "AliasDestino": "0997456825",
       "Monto": 10
@@ -463,7 +463,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T09:12:12",
+      "FechaTrx": "2024-07-29T09:12:12",
       "AliasOrigen": "0984251134",
       "AliasDestino": "0992741389",
       "Monto": 2.7
@@ -475,7 +475,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T09:12:08",
+      "FechaTrx": "2024-07-29T09:12:08",
       "AliasOrigen": "0984251134",
       "AliasDestino": "0992741389",
       "Monto": 2.7
@@ -487,7 +487,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "INTERNACIONAL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T09:02:22",
+      "FechaTrx": "2024-07-28T09:02:22",
       "AliasOrigen": "0960833339",
       "AliasDestino": "0989274667",
       "Monto": 1
@@ -499,7 +499,7 @@
       "BancoOrigen": "GUAYAQUIL",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T09:01:25",
+      "FechaTrx": "2024-07-28T09:01:25",
       "AliasOrigen": "",
       "AliasDestino": "0987498587",
       "Monto": 30
@@ -511,7 +511,7 @@
       "BancoOrigen": "INTERNACIONAL",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T09:00:25",
+      "FechaTrx": "2024-07-27T09:00:25",
       "AliasOrigen": "",
       "AliasDestino": "0960833339",
       "Monto": 1
@@ -523,7 +523,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T08:34:57",
+      "FechaTrx": "2024-07-27T08:34:57",
       "AliasOrigen": "0958890056",
       "AliasDestino": "0983307211",
       "Monto": 5
@@ -535,7 +535,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T08:34:54",
+      "FechaTrx": "2024-07-27T08:34:54",
       "AliasOrigen": "0958890056",
       "AliasDestino": "0983307211",
       "Monto": 5
@@ -547,7 +547,7 @@
       "BancoOrigen": "GUAYAQUIL",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T08:21:09",
+      "FechaTrx": "2024-07-26T08:21:09",
       "AliasOrigen": "",
       "AliasDestino": "0939272214",
       "Monto": 13
@@ -559,7 +559,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T08:18:07",
+      "FechaTrx": "2024-07-26T08:18:07",
       "AliasOrigen": "0983077464",
       "AliasDestino": "0990367981",
       "Monto": 38.7
@@ -571,7 +571,7 @@
       "BancoOrigen": "INTERNACIONAL",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T07:58:11",
+      "FechaTrx": "2024-07-26T07:58:11",
       "AliasOrigen": "",
       "AliasDestino": "0999980187",
       "Monto": 22.5
@@ -583,7 +583,7 @@
       "BancoOrigen": "INTERNACIONAL",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T07:44:29",
+      "FechaTrx": "2024-07-25T07:44:29",
       "AliasOrigen": "",
       "AliasDestino": "0958951573",
       "Monto": 20
@@ -595,7 +595,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T07:35:17",
+      "FechaTrx": "2024-07-25T07:35:17",
       "AliasOrigen": "0980300400",
       "AliasDestino": "0992787371",
       "Monto": 35
@@ -607,7 +607,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T07:34:32",
+      "FechaTrx": "2024-07-25T07:34:32",
       "AliasOrigen": "0980300400",
       "AliasDestino": "0992787371",
       "Monto": 50
@@ -619,7 +619,7 @@
       "BancoOrigen": "INTERNACIONAL",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T06:52:14",
+      "FechaTrx": "2024-07-25T06:52:14",
       "AliasOrigen": "",
       "AliasDestino": "0963269362",
       "Monto": 25
@@ -631,7 +631,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "GUAYAQUIL",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T06:49:27",
+      "FechaTrx": "2024-07-25T06:49:27",
       "AliasOrigen": "0981648560",
       "AliasDestino": "0968302049",
       "Monto": 10
@@ -643,7 +643,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T06:07:10",
+      "FechaTrx": "2024-07-25T06:07:10",
       "AliasOrigen": "0984424579",
       "AliasDestino": "0992741389",
       "Monto": 2.7
@@ -655,7 +655,7 @@
       "BancoOrigen": "PRODUBANCO",
       "BancoDestino": "PRODUBANCO",
       "CodRespuesta": "100000",
-      "FechaTrx": "2024-07-31T06:07:07",
+      "FechaTrx": "2024-07-25T06:07:07",
       "AliasOrigen": "0984424579",
       "AliasDestino": "0992741389",
       "Monto": 2.7
