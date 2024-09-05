@@ -30,7 +30,7 @@ const Inicio: React.FC = () => {
 
                 <div className="bg-card w-80 m-3 p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-1 border-l-4 border-secondary bg-white border-green-400" onClick={handleTransaccion}>
                     <img src={ImgTransaccion} className='w-1/4' />
-                    <h2>Monitoreo de transacciones WIP</h2>
+                    <h2>Monitoreo de Transacciones WIP</h2>
                 </div>
 
             </div>

@@ -28,11 +28,18 @@ const LineChart: React.FC<LineChartProps> = ({ transaccionesTotales, rangoTiempo
         maintainAspectRatio: false,
         scales: {
             x: {
-                beginAtZero: true
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Hora', // Etiqueta para el eje x
+                },
             },
             y: {
                 beginAtZero: true,
-                
+                title: {
+                    display: true,
+                    text: 'Transacciones', // Etiqueta para el eje x
+                },
             }
         }
     };

@@ -18,8 +18,8 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter, onClear }) => {
 
   // Boton de filtrar
   const handleFilterClick = () => {
-    // const selected = parseISO(selectedDate);
-    // console.log('selected nueva fecha', selected);
+    const selected = parseISO(selectedDate);
+    console.log('selected nueva fecha', selected);
     // if (!isToday(selected)) {
     //    setFilterMessage('Fecha incorrecta o fuera de rango');
     //    return false;
