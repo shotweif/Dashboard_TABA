@@ -7,7 +7,7 @@ import DateFilter from '../components/DateFilter';
 import UsersTransactions from '../components/UsersTransactions';
 import useFetchTransactions from '../hooks/useFetchDataHook';
 import { DataStructure } from '../types/information';
-import fakeData from '../data/fakeData.json';
+import fakeData from '../data/fakeData2.json';
 import { getHours, parseISO, format } from "date-fns";
 
 const TransaccionesWEP: React.FC = () => {

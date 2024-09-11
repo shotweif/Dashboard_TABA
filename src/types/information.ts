@@ -12,8 +12,8 @@ export interface Transaccion {
     BancoDestino: string;
     CodRespuesta: string;
     FechaTrx: string;
-    AliasOrigen: string;
-    AliasDestino: string;
+    AliasOrigen: string | null;
+    AliasDestino: string | null;
     Monto: number;
 }
 
@@ -28,6 +28,6 @@ export interface ClientesAtados {
 
 export interface DataStructure {
     ResultadosReporteCanalesWip: Transaccion[];
-    ResultadosReportecanalesWipHistorico: any[];
+    ResultadosReporteCanalesWipHis: Transaccion[];
     ClientesAtados: ClientesAtados;
 }
