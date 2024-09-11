@@ -8,36 +8,49 @@ import UsersTransactions from '../components/UsersTransactions';
 import useFetchTransactions from '../hooks/useFetchDataHook';
 import { DataStructure } from '../types/information';
 import fakeData from '../data/fakeData2.json';
-import { getHours, parseISO, format } from "date-fns";
+import { getHours, parseISO, format, subDays, startOfDay } from "date-fns";
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const TransaccionesWEP: React.FC = () => {
   const PRODUBANCO = 'PRODUBANCO';
-  const info: DataStructure = fakeData;
 
-  
-  const [filteredData, setFilteredData] = useState<DataStructure>(info);
+  const yesterday = subDays(new Date(), 1);
+  const formattedYesterday = format(startOfDay(yesterday), 'dd/MM/yyyy'); 
+  const today = format(startOfDay(new Date()), 'dd/MM/yyyy'); 
 
-  const filterDataByDate = (date: string) => {
-    console.log("fechaaaaaaaaaa",date);
-    const filteredResultados = info.ResultadosReporteCanalesWip.filter(
-      transaction => format(parseISO(transaction.FechaTrx), 'yyyy-MM-dd') === date
-    );
-    const filteredInfo = { ...info, ResultadosReporteCanalesWip: filteredResultados };
-    setFilteredData(filteredInfo);
+  const [initialDate, setInitialDate] = useState<string>(formattedYesterday); // Fecha inicial
+  const [endDate, setEndDate] = useState<string>(today); // Fecha final
+
+
+  const { info, loading, error } = useFetchTransactions(initialDate, endDate);
+
+  const handleFilterClick = (filterInitialDate: string, filterEndDate:string) => {
+    setInitialDate(filterInitialDate);
+    setEndDate(filterEndDate);
+  };
+  const handleClearClick = () => {
+    setInitialDate(formattedYesterday);
+    setEndDate(today);
   };
 
-  const resetData = () => {
-    setFilteredData(info);
-  };
+  if (loading) {
+    return <LoadingSpinner />; // Display the spinner while loading
+  }
 
-  useEffect(() => {
-    const today = format(new Date(), 'yyyy-MM-dd');
-    filterDataByDate(today);
-  }, []);
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!info) {
+    return <div>No data available</div>;
+  }
+
+
+  const allTransactions = [...info.ResultadosReporteCanalesWip, ...info.ResultadosReporteCanalesWipHis];
 
   // Grafico de lineas
   const transactionsByHour: { [key: number]: number } = {};
-  filteredData!.ResultadosReporteCanalesWip.forEach((transaction) => {
+  allTransactions!.forEach((transaction) => {
     const hour = getHours(parseISO(transaction.FechaTrx));
     if (!transactionsByHour[hour]) {
       transactionsByHour[hour] = 0;
@@ -49,28 +62,28 @@ const TransaccionesWEP: React.FC = () => {
   const counts = Object.values(transactionsByHour);
 
   // Lista de transacciones
-  const totalTransactions = filteredData!.ResultadosReporteCanalesWip.length;
-  const historicalTotal = info.ResultadosReporteCanalesWip.length;
+  const totalTransactions = allTransactions!.length;
+  const historicalTotal = allTransactions.length;
 
   // Grafico de barras
-  const receivedTransactions = filteredData!.ResultadosReporteCanalesWip.filter(
+  const receivedTransactions = allTransactions.filter(
     transaction => transaction.CodRespuesta === '100000'
   );
 
-  const rejectedTransactions = filteredData!.ResultadosReporteCanalesWip.filter(
+  const rejectedTransactions = allTransactions.filter(
     transaction => transaction.CodRespuesta !== '100000'
   );
 
   // Grafico Pastel
-  const localTransactions = filteredData!.ResultadosReporteCanalesWip.filter(
+  const localTransactions = allTransactions.filter(
     transaction => transaction.BancoOrigen === PRODUBANCO && transaction.BancoDestino === PRODUBANCO
   );
 
-  const externalTransactions = filteredData!.ResultadosReporteCanalesWip.length - localTransactions.length;
+  const externalTransactions = allTransactions.length - localTransactions.length;
 
   // Grafico de anillo
-  const activeUsers = filteredData!.ClientesAtados.CantidadAfiliados;
-  const inactiveUsers = filteredData!.ClientesAtados.CantidadNoAfiliados;
+  const activeUsers = info.ClientesAtados.CantidadAfiliados;
+  const inactiveUsers = info.ClientesAtados.CantidadNoAfiliados;
 
   return (
     <div className="p-4">
@@ -87,7 +100,7 @@ const TransaccionesWEP: React.FC = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
         <div className="bg-card h-96 p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-1 bg-green-700">
-          <DateFilter onFilter={filterDataByDate} onClear={resetData} />
+          <DateFilter onFilter={handleFilterClick} onClear={handleClearClick} />
         </div>
 
         <div className="bg-card p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-3 bg-white">

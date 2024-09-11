@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 import { DataStructure } from "../types/information";
 
-const useFetchTransactions = (selectedDate: string) => {
+const useFetchTransactions = (initialSelectedDate: string, endSelectedDate:string) => {
   const [info, setInfo] = useState<DataStructure | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
+  console.log("initialSelectedDate en el hook", initialSelectedDate);
+  console.log("endSelectedDate en el hook", endSelectedDate);
+
   useEffect(() => {
     const fetchData = async () => {
-      const date = new Date(selectedDate).toISOString();
+
       try {
         const response = await fetch('https://UIOMATRV-DVOP02.corp.gfp.com/ServiciosBackPR/api/Reportes/RequestValuesReporteCanales', {
-          headers: new Headers({ 'accept': '*/*', 'fechaconsulta': date }),
+          headers: new Headers({ 'accept': '*/*', 'fechaInicio': initialSelectedDate, 'fechaFin': endSelectedDate }),
           mode: 'cors'  
         });
 
@@ -31,7 +34,7 @@ const useFetchTransactions = (selectedDate: string) => {
     };
 
     fetchData();
-  }, [selectedDate]);
+  }, [initialSelectedDate, endSelectedDate]);
 
   return { info, loading, error };
 };

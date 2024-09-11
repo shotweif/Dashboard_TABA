@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { format, isToday, parseISO, subDays } from 'date-fns';
+import { format, isToday, parseISO, startOfDay, subDays } from 'date-fns';
 
 interface DateFilterProps {
   onFilter: (initialDate: string, endDate:string) => void;
@@ -11,7 +11,8 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter, onClear }) => {
   const formattedYesterday = format(yesterday, 'yyyy-MM-dd'); //para enviar al hook
   const today = format(new Date(), 'yyyy-MM-dd'); //para enviar al hook
 
-
+ console.log("formated yesterday", formattedYesterday);
+ console.log("today", today);
   const [initialDate, setInitialDate] = useState<string>(formattedYesterday); // Fecha inicial
   const [endDate, setEndDate] = useState<string>(today); // Fecha final
   const [filterMessage, setFilterMessage] = useState<string>(''); // Mensaje de accion
@@ -19,10 +20,14 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter, onClear }) => {
 
   // Boton de filtrar
   const handleFilterClick = () => {
-    const selectedInitialDate = format(initialDate, 'dd/MM/yyyy');
-    const selectedEndDate = format(endDate, 'dd/MM/yyyy');
+
+    const initialDateObj = parseISO(initialDate);
+    const endDateObj = parseISO(endDate);
+  
+    const selectedInitialDate = format(startOfDay(initialDateObj) , 'dd/MM/yyyy');
+    const selectedEndDate = format(startOfDay(endDateObj), 'dd/MM/yyyy');
     console.log('selected nueva fecha para mandar al hook', selectedInitialDate, selectedEndDate);
-   if (endDate < initialDate) {
+   if (endDateObj < initialDateObj) {
       setFilterMessage('La fecha final no puede ser anterior a la fecha inicial.');
       return;
     }
