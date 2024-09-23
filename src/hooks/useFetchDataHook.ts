@@ -6,8 +6,6 @@ const useFetchTransactions = (initialSelectedDate: string, endSelectedDate:strin
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  console.log("initialSelectedDate en el hook", initialSelectedDate);
-  console.log("endSelectedDate en el hook", endSelectedDate);
 
   useEffect(() => {
     const fetchData = async () => {
