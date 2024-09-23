@@ -3,7 +3,7 @@ import { format, isToday, parseISO, startOfDay, subDays } from 'date-fns';
 
 interface DateFilterProps {
   onFilter: (initialDate: string, endDate:string) => void;
-  onClear: () => void;
+  onClear: (initialDate: string, endDate:string) => void;
 }
 
 const DateFilter: React.FC<DateFilterProps> = ({ onFilter, onClear }) => {
@@ -11,8 +11,7 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter, onClear }) => {
   const formattedYesterday = format(yesterday, 'yyyy-MM-dd'); //para enviar al hook
   const today = format(new Date(), 'yyyy-MM-dd'); //para enviar al hook
 
- console.log("formated yesterday", formattedYesterday);
- console.log("today", today);
+
   const [initialDate, setInitialDate] = useState<string>(formattedYesterday); // Fecha inicial
   const [endDate, setEndDate] = useState<string>(today); // Fecha final
   const [filterMessage, setFilterMessage] = useState<string>(''); // Mensaje de accion
@@ -26,7 +25,7 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter, onClear }) => {
   
     const selectedInitialDate = format(startOfDay(initialDateObj) , 'dd/MM/yyyy');
     const selectedEndDate = format(startOfDay(endDateObj), 'dd/MM/yyyy');
-    console.log('selected nueva fecha para mandar al hook', selectedInitialDate, selectedEndDate);
+
    if (endDateObj < initialDateObj) {
       setFilterMessage('La fecha final no puede ser anterior a la fecha inicial.');
       return;
@@ -38,12 +37,20 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter, onClear }) => {
 
   // boton de limpiar filtro
   const handleClearClick = () => {
-    const today = format(new Date(), 'yyyy-MM-dd');
-    const yesterdayFormatted = format(subDays(new Date(), 1), 'yyyy-MM-dd'); // Calculate yesterday's date
-    setInitialDate(today);
-    setEndDate(yesterdayFormatted)
+    const todayFormatted = format(startOfDay(new Date()), 'yyyy-MM-dd');
+    const yesterdayFormatted = format(today, 'yyyy-MM-dd'); // Calculate yesterday's date
+    
+    const todayObject = parseISO(todayFormatted);
+    const yesterdayObject = parseISO(yesterdayFormatted);
+
+
+    const selectedInitialDate = format(startOfDay(yesterdayObject) , 'dd/MM/yyyy');
+    const selectedEndDate = format(startOfDay(todayObject), 'dd/MM/yyyy');
+
+    setInitialDate(yesterdayFormatted);
+    setEndDate(today)
     setFilterMessage('Estos son los últimos datos');
-    onClear();
+    onClear(selectedInitialDate,selectedEndDate);
   };
 
 
@@ -59,8 +66,11 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter, onClear }) => {
     };
   return (
     <div>
-      <h3 className="text-lg font-semibold text-muted text-white text-2xl">Filtro de fechas</h3>
+      <h3 className="text-lg font-semibold text-muted text-white text-2xl">Filtro</h3>
       <div>
+      <label htmlFor="initialDateInput" className="block text-sm font-medium text-white pt-3">
+    Fecha Inicial
+  </label>
         <input
           type="date"
           id="initialDateInput"
@@ -71,6 +81,9 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter, onClear }) => {
         />
       </div>
       <div>
+      <label htmlFor="finalDateInput" className="block text-sm font-medium text-white pt-3">
+    Fecha Final
+  </label>
         <input
           type="date"
           id="finalDateInput"
@@ -97,7 +110,7 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter, onClear }) => {
           Limpiar
         </button>
       </div>
-      <h3 id="TipodeFiltro" className="text-lg font-semibold text-secondary m-10 text-center text-white">
+      <h3 id="TipodeFiltro" className="text-lg font-semibold text-secondary m-2 text-center text-white">
         {filterMessage}
       </h3>
     </div>
