@@ -54,7 +54,6 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter, onClear }) => {
   };
 
 
-    // Handle initial date change and update final date if necessary
     const handleInitialDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const newInitialDate = e.target.value;
       setInitialDate(newInitialDate);

@@ -8,6 +8,7 @@ import UsersTransactions from '../components/UsersTransactions';
 import useFetchTransactions from '../hooks/useFetchDataHook';
 import { getHours, parseISO, format, subDays, startOfDay } from "date-fns";
 import LoadingSpinner from '../components/LoadingSpinner';
+import fakeData from '../data/fakeData.json';
 
 const TransaccionesWEP: React.FC = () => {
   const PRODUBANCO = 'PRODUBANCO';
