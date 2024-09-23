@@ -8,9 +8,7 @@ import UsersTransactions from "../components/UsersTransactions";
 import useFetchTransactions from "../hooks/useFetchDataHook";
 import { getHours, parseISO, format, subDays, startOfDay } from "date-fns";
 import LoadingSpinner from "../components/LoadingSpinner";
-import fakeData from "../data/fakeData.json";
 import { EmptyData } from "../components/EmptyData";
-import { DataStructure } from "../types/information";
 
 const TransaccionesWEP: React.FC = () => {
   const PRODUBANCO = "PRODUBANCO";
@@ -22,13 +20,8 @@ const TransaccionesWEP: React.FC = () => {
   const [initialDate, setInitialDate] = useState<string>(formattedYesterday); // Fecha inicial
   const [endDate, setEndDate] = useState<string>(today); // Fecha final
 
-  console.log("initialDate", initialDate);
-  console.log("endDate", endDate);
-  //const { info, loading, error } = useFetchTransactions(initialDate, endDate);
+  const { info, loading, error } = useFetchTransactions(initialDate, endDate);
 
-  const info = fakeData as DataStructure;
-  const loading = false;
-  const error = false;
   const handleFilterClick = (
     filterInitialDate: string,
     filterEndDate: string
