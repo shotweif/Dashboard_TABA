@@ -12,6 +12,7 @@
     "@types/react-dom": "^18.3.0",
     "chart.js": "^4.4.3",
     "chartjs-chart-geo": "^4.3.1",
+    "date-fns": "^3.6.0",
     "express": "^4.19.2",
     "https": "^1.0.0",
     "mixpanel-browser": "^2.55.0",
@@ -24,7 +25,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env HTTPS=true SSL_CRT_FILE=cert.pem SSL_KEY_FILE=key.pem react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -49,6 +50,7 @@
   },
   "devDependencies": {
     "@types/mixpanel-browser": "^2.49.1",
-    "@types/react-simple-maps": "^3.0.6"
+    "@types/react-simple-maps": "^3.0.6",
+    "cross-env": "^7.0.3"
   }
 }

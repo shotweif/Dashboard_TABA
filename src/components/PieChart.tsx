@@ -2,9 +2,10 @@
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
 import { ChartData, ChartOptions } from 'chart.js';
+import { Transaccion } from '../types/information';
 
 interface PieChartProps {
-    locales: number;
+    locales: Transaccion[];
     externos: number;
 }
 
@@ -13,7 +14,7 @@ const PieChart: React.FC <PieChartProps> = ({locales, externos}) => {
         labels: ['A otros bancos', 'Locales'],
         datasets: [{
             label: 'Transacciones',
-            data: [locales, externos],
+            data: [externos, locales.length],
             backgroundColor: ['rgba(34, 102, 34, 1)', 'rgba(63, 191, 63, 1)'],
             borderWidth: 1
         }]

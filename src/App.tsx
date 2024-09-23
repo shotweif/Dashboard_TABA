@@ -7,8 +7,8 @@ import NavBar from './components/NavBar';
 import Inicio from './view/Inicio';
 import TransaccionesWEP from './view/TransaccionesWEP';
 import Loader from './view/Loader';
-import Pruebas from './view/Pruebas';
 import './chartSetup';
+import './tailwind.min.css'
 
 function App() {
     const [stylesLoaded, setStylesLoaded] = useState(false);
@@ -16,7 +16,7 @@ function App() {
     useEffect(() => {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
-        link.href = 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
+        link.href = './tailwind.min.css';
         link.onload = () => setStylesLoaded(true);
         document.head.appendChild(link);
     }, []);
