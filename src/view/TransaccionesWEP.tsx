@@ -9,6 +9,7 @@ import useFetchTransactions from "../hooks/useFetchDataHook";
 import { getHours, parseISO, format, subDays, startOfDay } from "date-fns";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { EmptyData } from "../components/EmptyData";
+import ErrorComponent from "../components/ErrorComponent";
 
 const TransaccionesWEP: React.FC = () => {
   const PRODUBANCO = "PRODUBANCO";
@@ -19,8 +20,11 @@ const TransaccionesWEP: React.FC = () => {
 
   const [initialDate, setInitialDate] = useState<string>(formattedYesterday); // Fecha inicial
   const [endDate, setEndDate] = useState<string>(today); // Fecha final
+  
+
 
   const { info, loading, error } = useFetchTransactions(initialDate, endDate);
+
 
   const handleFilterClick = (
     filterInitialDate: string,
@@ -41,12 +45,9 @@ const TransaccionesWEP: React.FC = () => {
     return <LoadingSpinner />; // Display the spinner while loading
   }
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
 
-  if (!info) {
-    return <div>No hay datos disponibles</div>;
+  if (!info || error) {
+    return <ErrorComponent></ErrorComponent>
   }
 
   const allTransactions = [
