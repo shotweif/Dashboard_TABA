@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { DataStructure } from "../types/information";
 
-
 // Inicialización del objeto de tipo DataStructure
 const initialDataStructure: DataStructure = {
   ResultadosReporteCanalesWip: [], // Array vacío de transacciones
@@ -22,22 +21,19 @@ const useFetchTransactions = (
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);  
-      setError(null);    
-      setEmptyData(false);  
+      setLoading(true);
+      setError(null);
+      setEmptyData(false);
 
       try {
-        const response = await fetch(
-          "https://gestionproduccion.produbanco.prod/ServiciosBackPR/api/Reportes/RequestValuesReporteCanales",
-          {
-            headers: new Headers({
-              accept: "*/*",
-              fechaInicio: initialSelectedDate,
-              fechaFin: endSelectedDate,
-            }),
-            mode: "cors",
-          }
-        );
+        const response = await fetch("http://localhost:3000/api/data", {
+          headers: new Headers({
+            accept: "*/*",
+            fechaInicio: initialSelectedDate,
+            fechaFin: endSelectedDate,
+          }),
+          mode: "cors",
+        });
 
         // Validar si la respuesta tiene un estado exitoso
         if (!response.ok) {

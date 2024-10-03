@@ -80,31 +80,42 @@ const TransaccionesWEP: React.FC<TransaccionesWEPProps> = ({
 
   return (
     <div className="p-4">
+      {/* Header */}
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4 ">
+        <div className="bg-card col-span-1 flex h-12 pl-4 pointer-events-none select-none">
+          <img
+            src="https://www.produbanco.com.ec/media/712553/web.png?format=webp"
+            alt=""
+            className="h-full "
+          />
+        </div>
+        <div className="bg-card col-span-3 flex h-12 items-center">
+          <h2 className="text-3xl font-bold text-primary text-green-800 leading-10">
+            Monitoreo de Transacciones WIP
+          </h2>
+        </div>
+      </div>
+
       {/* Line Chart */}
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
-        <div className="bg-card p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-3 row-span-4 bg-white border-l-4 border-secondary bg-white border-green-400">
+        <div className="bg-card p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-4 bg-white border-l-4 border-secondary bg-white border-green-400">
           {allTransactions.length === 0 || emptyData ? (
             <EmptyData message="No existen datos de transacciones para las fechas seleccionadas" />
           ) : (
             <LineChart transaccionesTotales={counts} rangoTiempo={hours} />
           )}
         </div>
+      </div>
+
+      {/* Other Charts */}
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
         <div className="bg-card h-full p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-1 border-l-4 border-secondary bg-white border-green-400">
           <UsersTransactions
             activeUsers={activeUsers}
             totalTransactions={totalTransactions}
           />
         </div>
-      </div>
-
-      {/* Other Charts */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
-        <div
-          className="bg-card p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-2  border-l-4 border-secondary bg-white border-green-400"
-          style={{
-            height: "200px",
-          }}
-        >
+        <div className="bg-card p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-1 border-l-4 border-secondary bg-white border-green-400">
           {allTransactions.length === 0 || emptyData ? (
             <EmptyData message="No existen datos de transacciones para las fechas seleccionadas" />
           ) : (
@@ -114,10 +125,7 @@ const TransaccionesWEP: React.FC<TransaccionesWEPProps> = ({
             />
           )}
         </div>
-        <div
-          className=" p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-1 border-l-4 border-secondary bg-white border-green-400"
-          style={{ height: "100%" }}
-        >
+        <div className="bg-card p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-1 border-l-4 border-secondary bg-white border-green-400">
           {allTransactions.length === 0 || emptyData ? (
             <EmptyData message="No existen datos de transacciones para las fechas seleccionadas" />
           ) : (
