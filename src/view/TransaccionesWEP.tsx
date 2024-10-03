@@ -45,7 +45,7 @@ const TransaccionesWEP: React.FC = () => {
     return <LoadingSpinner />; // Display the spinner while loading
   }
 
-  if (!info || error) {
+  if (error) {
     return <ErrorComponent></ErrorComponent>;
   }
 

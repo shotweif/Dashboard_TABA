@@ -1,11 +1,21 @@
 import { useEffect, useState } from "react";
 import { DataStructure } from "../types/information";
 
+
+// Inicialización del objeto de tipo DataStructure
+const initialDataStructure: DataStructure = {
+  ResultadosReporteCanalesWip: [], // Array vacío de transacciones
+  ResultadosReporteCanalesWipHis: [], // Array vacío de transacciones históricas
+  ClientesAtados: {
+    CantidadAfiliados: 0,
+    CantidadNoAfiliados: 0,
+  },
+};
 const useFetchTransactions = (
   initialSelectedDate: string,
   endSelectedDate: string
 ) => {
-  const [info, setInfo] = useState<DataStructure | null>(null);
+  const [info, setInfo] = useState<DataStructure>(initialDataStructure);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [emptyData, setEmptyData] = useState<boolean>(false);
