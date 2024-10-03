@@ -20,11 +20,11 @@ const TransaccionesWEP: React.FC = () => {
 
   const [initialDate, setInitialDate] = useState<string>(formattedYesterday); // Fecha inicial
   const [endDate, setEndDate] = useState<string>(today); // Fecha final
-  
 
-
-  const { info, loading, error } = useFetchTransactions(initialDate, endDate);
-
+  const { info, loading, error, emptyData } = useFetchTransactions(
+    initialDate,
+    endDate
+  );
 
   const handleFilterClick = (
     filterInitialDate: string,
@@ -45,9 +45,8 @@ const TransaccionesWEP: React.FC = () => {
     return <LoadingSpinner />; // Display the spinner while loading
   }
 
-
   if (!info || error) {
-    return <ErrorComponent></ErrorComponent>
+    return <ErrorComponent></ErrorComponent>;
   }
 
   const allTransactions = [
@@ -116,7 +115,7 @@ const TransaccionesWEP: React.FC = () => {
           <DateFilter onFilter={handleFilterClick} onClear={handleClearClick} />
         </div>
         <div className="bg-card p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-3 bg-white border-l-4 border-secondary bg-white border-green-400">
-          {allTransactions.length === 0 ? (
+          {allTransactions.length === 0 || emptyData ? (
             <EmptyData message="No existen datos de transacciones para las fechas seleccionadas" />
           ) : (
             <LineChart transaccionesTotales={counts} rangoTiempo={hours} />
@@ -132,24 +131,23 @@ const TransaccionesWEP: React.FC = () => {
           />
         </div>
         <div className="bg-card p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-1 border-l-4 border-secondary bg-white border-green-400">
-        {allTransactions.length === 0 ? (
+          {allTransactions.length === 0 || emptyData ? (
             <EmptyData message="No existen datos de transacciones para las fechas seleccionadas" />
           ) : (
             <BarChart
-            transAceptada={receivedTransactions}
-            transRechazada={rejectedTransactions}
-          />
+              transAceptada={receivedTransactions}
+              transRechazada={rejectedTransactions}
+            />
           )}
-          
         </div>
         <div className="bg-card p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-1 border-l-4 border-secondary bg-white border-green-400">
-        {allTransactions.length === 0 ? (
+          {allTransactions.length === 0 || emptyData ? (
             <EmptyData message="No existen datos de transacciones para las fechas seleccionadas" />
           ) : (
             <PieChart
-            locales={localTransactions}
-            externos={externalTransactions}
-          />
+              locales={localTransactions}
+              externos={externalTransactions}
+            />
           )}
         </div>
         <div className="bg-card p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300 col-span-1 border-l-4 border-secondary bg-white border-green-400">
