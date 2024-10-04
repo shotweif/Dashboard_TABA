@@ -5,7 +5,7 @@ import DoughnutChart from "../components/DoughnutChart";
 import LineChart from "../components/LineChart";
 import UsersTransactions from "../components/UsersTransactions";
 import useFetchTransactions from "../hooks/useFetchDataHook";
-import { getHours, parseISO, format, subDays, startOfDay } from "date-fns";
+import { getHours, parseISO } from "date-fns";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { EmptyData } from "../components/EmptyData";
 import ErrorComponent from "../components/ErrorComponent";
