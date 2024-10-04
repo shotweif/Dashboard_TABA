@@ -18,7 +18,7 @@ const BarChart: React.FC<BarChartProps> = ({
       {
         label: "Transacciones",
         data: [transAceptada.length, transRechazada.length],
-        backgroundColor: ["rgba(63, 191, 63, 0.5)", "rgba(34, 102, 3, 0.5)"],
+        backgroundColor: ["rgba(63, 191, 63, 1)","rgba(0, 105, 60, 1)" ],
         borderWidth: 1,
       },
     ],
@@ -35,7 +35,11 @@ const BarChart: React.FC<BarChartProps> = ({
     },
   };
 
-  return <Bar data={data} options={options} />;
+  return (
+    <div className="w-full h-full "> {/* Establecer el tamaño del gráfico */}
+      <Bar data={data} options={options} />
+    </div>
+  );
 };
 
 export default BarChart;

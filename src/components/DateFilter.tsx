@@ -69,11 +69,11 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter, onClear }) => {
     }
   };
   return (
-    <div className="flex gap-3 items-center">
+    <div className="flex gap-3 mt-2 items-center">
       <div>
         <label
           htmlFor="initialDateInput"
-          className="block text-sm font-medium text-white pt-3  text-green-800"
+          className="block text-sm font-medium text-white pt-3  text-green-800" style={{ color:'#00693c'}}
         >
           Fecha Inicial
         </label>
@@ -89,7 +89,7 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter, onClear }) => {
       <div>
         <label
           htmlFor="finalDateInput"
-          className="block text-sm font-medium text-white pt-3  text-green-800"
+          className="block text-sm font-medium text-white pt-3  text-green-800"style={{ color:'#00693c'}}
         >
           Fecha Final
         </label>
@@ -103,15 +103,15 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilter, onClear }) => {
           onChange={(e) => setEndDate(e.target.value)}
         />
       </div>
-      <div className=" grid grid-cols-2 gap-3 mt-10" style={{ width: "250px" }}>
-        <button
+      <div className=" grid grid-cols-2 gap-3 mt-10" style={{ width: "250px"}}>
+        <button style={{ background:'#00693c'}}
           id="myButton"
           className="bg-green-900 text-primary-foreground hover:bg-primary/80 w-full h-9 text-white rounded-lg"
           onClick={handleFilterClick}
         >
           Filtrar
         </button>
-        <button
+        <button style={{ background:'#222222'}}
           id="ButtonDay"
           className="bg-black text-primary-foreground hover:bg-primary/80 w-full h-9 text-white rounded-lg "
           onClick={handleClearClick}

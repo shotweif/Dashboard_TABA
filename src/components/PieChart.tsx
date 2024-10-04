@@ -16,7 +16,7 @@ const PieChart: React.FC<PieChartProps> = ({ locales, externos }) => {
       {
         label: "Transacciones",
         data: [externos, locales.length],
-        backgroundColor: ["rgba(34, 102, 34, 1)", "rgba(63, 191, 63, 1)"],
+        backgroundColor: ["rgba(0, 105, 60, 1)", "rgba(63, 191, 63, 1)"],
         borderWidth: 1,
       },
     ],
@@ -33,13 +33,15 @@ const PieChart: React.FC<PieChartProps> = ({ locales, externos }) => {
 
   return (
     <div>
-      <h3 className="text-lg font-semibold text-primary text-green-600 text-2xl">
+      <h3 className="text-lg font-semibold text-primary text-green-600 text-2xl pb-2" style={{ color:'#00693c'}}>
         Origen de Transacciones
       </h3>
-      <p className="text-sm text-muted-foreground pb-10">
+      <p className="text-sm text-muted-foreground pb-8">
         Usuarios que abandonaron la plataforma
       </p>
+      <div className="w-64 h-64 flex justify-center items-center mx-auto">
       <Pie data={data} options={options} />
+      </div>
     </div>
   );
 };
